@@ -4,6 +4,8 @@ body {
   align-items: center;
   background-color: rgb(7, 7, 66);
   color: antiquewhite;
+  font-size: 1.2rem;
+  /* box-sizing: border-box; */
 }
 
 header {
@@ -13,11 +15,11 @@ header {
 #emails-form {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   border: 2px solid gray;
   border-radius: 0.5rem;
   padding: 1rem;
-  width: 100%;
+  width: 80vw;
 }
 label {
   padding-bottom: 0.5rem;
@@ -34,4 +36,23 @@ button {
 
 button {
   background-color: antiquewhite;
+}
+
+#render-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  padding: 1rem;
+}
+
+.success {
+}
+
+.error {
+  background-color: red;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: justify;
 }
