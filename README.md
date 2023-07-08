@@ -3,7 +3,7 @@
 1. Clonar repositorio:
 
 ```sh
-git clone https://github.com/galiardi/modulo6-grupal5
+git clone https://github.com/galiardi/modulo6-grupal6
 ```
 
 2. Instalar dependencias:
@@ -12,7 +12,7 @@ git clone https://github.com/galiardi/modulo6-grupal5
 npm install
 ```
 
-3. Levantar servidor (<span style="color: darkred;">Las variables de entorno se disponibilizarán con dotenv solo en modo desarrollo. En modo producción deben ser agregadas al host.</span>):
+3. Levantar servidor: (<span style="color: darkred;">Las variables de entorno se disponibilizarán con dotenv solo en modo desarrollo. En modo producción deben ser agregadas al host.</span>)
 
 ```sh
 npm run dev
