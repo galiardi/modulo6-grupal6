@@ -12,19 +12,19 @@ router.post('/', async (req, res) => {
   };
 
   try {
-    const { emailList, emailSubject, emailMessage } = req.body;
+    const { emails, subject, messageHeader } = req.body;
 
-    const message = await createMessage(emailMessage);
+    const message = await createMessage(messageHeader);
 
     const info = await sendEmail({
-      emailList,
-      emailSubject,
+      emails,
+      subject,
       message,
     });
 
     const isFileSaved = await createFile({
       info,
-      emailSubject,
+      subject,
       message,
     });
 

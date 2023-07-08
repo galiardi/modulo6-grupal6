@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
-async function createFile({ info, emailSubject, message }) {
+async function createFile({ info, subject, message }) {
   try {
     const filePath = path.join(
       __dirname,
@@ -18,7 +18,7 @@ async function createFile({ info, emailSubject, message }) {
       from: info.envelope.from,
       to: info.envelope.to,
       messageId: info.messageId,
-      subject: emailSubject,
+      subject,
       message,
     };
 

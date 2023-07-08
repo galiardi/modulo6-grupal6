@@ -43,10 +43,10 @@ button {
   flex-direction: column;
   align-items: center;
   width: 80vw;
-  padding: 1rem;
 }
 
 .success {
+  margin-top: 2rem;
 }
 
 .error {

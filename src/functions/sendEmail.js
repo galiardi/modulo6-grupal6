@@ -9,11 +9,11 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-async function sendEmail({ emailList, emailSubject, message }) {
+async function sendEmail({ emails, subject, message }) {
   const info = await transporter.sendMail({
     from: SMTP_USER,
-    to: emailList,
-    subject: emailSubject,
+    to: emails,
+    subject,
     html: message,
   });
   return info;

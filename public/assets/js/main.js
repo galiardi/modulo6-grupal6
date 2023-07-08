@@ -1,3 +1,5 @@
+import { atLeastOneValid } from './atLeastOneValid.js';
+
 const emailsForm = document.getElementById('emails-form');
 const emailsInput = document.getElementById('emails');
 const subjectInput = document.getElementById('subject');
@@ -7,17 +9,22 @@ const renderDiv = document.getElementById('render-div');
 
 emailsForm.addEventListener('submit', async (e) => {
   e.preventDefault();
+
+  const emails = emailsInput.value.trim();
+  const subject = subjectInput.value.trim();
+  const messageHeader = messageInput.value.trim();
+
+  if (!atLeastOneValid(emails))
+    return alert('Debe ingresar al menos 1 correo válido.');
+
   submitButton.disabled = true;
   submitButton.innerHTML = 'cargando...';
-  const emailList = emailsInput.value.trim();
-  const emailSubject = subjectInput.value.trim();
-  const emailMessage = messageInput.value.trim();
 
   try {
     const response = await fetch('./spammer', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ emailList, emailSubject, emailMessage }),
+      body: JSON.stringify({ emails, subject, messageHeader }),
     });
     const { data, error } = await response.json();
 

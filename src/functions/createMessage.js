@@ -1,4 +1,4 @@
-async function createMessage(emailMessage) {
+async function createMessage(messageHeader) {
   const { dolar, euro, uf, utm } = await fetch(
     'https://mindicador.cl/api'
   ).then((response) => response.json());
@@ -9,10 +9,10 @@ async function createMessage(emailMessage) {
     })
     .join('');
 
-  const messageWithIndicators =
-    emailMessage + '<p>Los indicadores de hoy son:</p>' + economicIndicators;
+  const message =
+    messageHeader + '<p>Los indicadores de hoy son:</p>' + economicIndicators;
 
-  return messageWithIndicators;
+  return message;
 }
 
 module.exports = createMessage;
