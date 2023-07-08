@@ -9,6 +9,10 @@ git clone https://github.com/galiardi/modulo6-grupal6
 2. Instalar dependencias:
 
 ```sh
+cd grupal6-modulo6
+```
+
+```sh
 npm install
 ```
 
